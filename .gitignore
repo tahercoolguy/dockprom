@@ -3,3 +3,4 @@
 .vscode/
 .idea/
 /prometheus/blackbox-targets/*
+!/prometheus/blackbox-targets/example.yml
