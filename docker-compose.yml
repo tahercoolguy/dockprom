@@ -24,8 +24,8 @@ services:
       - "--web.enable-lifecycle"
       - "--web.enable-admin-api"
     restart: unless-stopped
-    ports:
-      - "9090:9090"
+    expose:
+      - 9090
     networks:
       - monitor-net
     labels:
