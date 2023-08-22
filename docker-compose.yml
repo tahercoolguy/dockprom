@@ -81,6 +81,20 @@ services:
       - monitor-net
     labels:
       org.label-schema.group: "monitoring"
+  
+  nginxexporter:
+    image: fish/nginx-exporter
+    container_name: nginxexporter
+    command:
+      - '-nginx.scrape_uri=https://multiplewords.com/nginx_status'
+    restart: unless-stopped
+    expose:
+      - 9113
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:v0.46.0
